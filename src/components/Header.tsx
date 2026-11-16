@@ -22,7 +22,6 @@ export const Header: React.FC = () => {
     toggleTheme,
     currentUser,
     logout,
-    login,
     syncData,
     isLoading,
     lastSync,
@@ -176,36 +175,6 @@ export const Header: React.FC = () => {
             >
               <HelpCircle className="w-4 h-4" />
             </button>
-          </div>
-
-          {/* Quick Demo Role Switcher (Dynamic 4 Official Users) */}
-          <div className="hidden xl:flex items-center bg-zinc-100 dark:bg-[#141418] p-0.5 rounded-lg border border-amber-900/15 dark:border-amber-500/20 text-[11px]">
-            {[
-              { id: 'USR-01', fallbackUser: 'superadmin', fallbackPass: 'admin123', label: 'Super Admin', activeClass: 'bg-gradient-to-r from-amber-500 to-yellow-500 text-zinc-950 font-bold' },
-              { id: 'USR-02', fallbackUser: 'admin1', fallbackPass: 'admin123', label: 'Admin 1', activeClass: 'bg-zinc-900 dark:bg-amber-400/20 text-amber-300 border border-amber-500/40 font-semibold' },
-              { id: 'USR-03', fallbackUser: 'admin2', fallbackPass: 'admin123', label: 'Admin 2', activeClass: 'bg-zinc-900 dark:bg-amber-400/20 text-amber-300 border border-amber-500/40 font-semibold' },
-              { id: 'USR-04', fallbackUser: 'phmj', fallbackPass: 'phmj123', label: 'PHMJ', activeClass: 'bg-emerald-600 text-white font-semibold' },
-            ].map((slot, idx) => {
-              const matched = users.find((u) => u.id === slot.id) || users[idx];
-              const targetUsername = matched?.username || slot.fallbackUser;
-              const targetPassword = matched?.password || slot.fallbackPass;
-              const isActive =
-                currentUser?.id === slot.id || currentUser?.username === targetUsername;
-              return (
-                <button
-                  key={slot.id}
-                  onClick={() => login(targetUsername, targetPassword)}
-                  className={`px-2 py-1 rounded-md transition-colors ${
-                    isActive
-                      ? `${slot.activeClass} shadow-xs`
-                      : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-amber-200'
-                  }`}
-                  title={`${matched?.nama || slot.label} (${targetUsername})`}
-                >
-                  {slot.label}
-                </button>
-              );
-            })}
           </div>
 
           {/* User Profile & Role Info */}
