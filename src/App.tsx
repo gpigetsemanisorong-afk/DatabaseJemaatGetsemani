@@ -26,7 +26,7 @@ import { DiakoniaView } from './components/diakonia/DiakoniaView';
 import { Menu, X } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
-  const { activeMenu, resetAllData } = useApp();
+  const { currentUser, activeMenu, resetAllData } = useApp();
   const [isResetModalOpen, setIsResetModalOpen] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
@@ -34,6 +34,16 @@ const MainLayout: React.FC = () => {
     await resetAllData();
     setIsResetModalOpen(false);
   };
+
+  // When not logged in, display the Login screen exclusively
+  if (!currentUser) {
+    return (
+      <div className="min-h-screen bg-[#08080a] text-zinc-100 flex flex-col font-sans">
+        <LoginModal />
+        <ToastContainer />
+      </div>
+    );
+  }
 
   const renderActiveView = () => {
     switch (activeMenu) {

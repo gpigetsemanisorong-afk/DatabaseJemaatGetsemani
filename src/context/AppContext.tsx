@@ -228,18 +228,18 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     setLastSync(db.lastSync);
     setIsOnline(db.isOnline);
 
-    // Restore user session if exists, otherwise default to Super Admin for demo ease
+    // Restore user session if exists, otherwise require user to log in
     const savedUser = localStorage.getItem(AUTH_USER_KEY);
     if (savedUser) {
       try {
         const parsed = JSON.parse(savedUser);
         const matched = db.users.find((u) => u.username === parsed.username);
-        setCurrentUser(matched || db.users[0] || null);
+        setCurrentUser(matched || null);
       } catch {
-        setCurrentUser(db.users[0] || null);
+        setCurrentUser(null);
       }
     } else {
-      setCurrentUser(db.users[0] || null);
+      setCurrentUser(null);
     }
 
     // Background sync on initial startup
