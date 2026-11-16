@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  code, kbd, samp, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Custom sleek gold-accent scrollbars */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.3);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.55);
+  }
+}
+
+/* =========================================================================
+   BLACK & GOLD LUXURY THEME OVERRIDES FOR SHARED SURFACES IN DARK MODE
+   Excludes official Dukcapil KK (#kk-dukcapil-sheet) & e-KTP (#ktp-dukcapil-card)
+   ========================================================================= */
+.dark body {
+  background-color: #08080a;
+  color: #f4f4f5;
+}
+
+.dark main .bg-white:not(#kk-dukcapil-sheet):not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card):not(#ktp-dukcapil-card *),
+.dark [role="dialog"] .bg-white:not(#kk-dukcapil-sheet):not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-white:not(#kk-dukcapil-sheet):not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card):not(#ktp-dukcapil-card *) {
+  background-color: #121216 !important;
+  color: #f4f4f5;
+}
+
+.dark main .bg-slate-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-slate-50\/80:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-slate-100:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-slate-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-slate-100:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  background-color: #18181e !important;
+  color: #e4e4e7;
+}
+
+.dark main .bg-slate-200:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-slate-200:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  background-color: #1f1f26 !important;
+}
+
+.dark main .hover\:bg-slate-50:hover:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .hover\:bg-slate-50\/80:hover:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .hover\:bg-slate-100:hover:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  background-color: #1d1d24 !important;
+}
+
+.dark main .text-slate-900:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .text-slate-950:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-slate-900:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-slate-950:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  color: #fafafa !important;
+}
+
+.dark main .text-slate-800:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .text-slate-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-slate-800:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-slate-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  color: #e4e4e7 !important;
+}
+
+.dark main .text-slate-600:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .text-slate-500:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-slate-600:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-slate-500:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  color: #a1a1aa !important;
+}
+
+.dark main .border-slate-200:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .border-slate-200\/80:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .border-slate-200\/90:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .border-slate-300:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .border-slate-100:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .divide-slate-100 > :not(:first-child),
+.dark main .divide-slate-200 > :not(:first-child),
+.dark .fixed .border-slate-200:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .border-slate-300:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .border-slate-100:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  border-color: rgba(212, 175, 55, 0.16) !important;
+}
+
+.dark main input:not([type="checkbox"]):not([type="radio"]):not(#kk-dukcapil-sheet *),
+.dark main select:not(#kk-dukcapil-sheet *),
+.dark main textarea:not(#kk-dukcapil-sheet *),
+.dark .fixed input:not([type="checkbox"]):not([type="radio"]):not(#kk-dukcapil-sheet *),
+.dark .fixed select:not(#kk-dukcapil-sheet *),
+.dark .fixed textarea:not(#kk-dukcapil-sheet *) {
+  background-color: #18181d !important;
+  color: #f4f4f5 !important;
+  border-color: rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Preserve dark text inside bright gold/amber buttons */
+.dark .bg-amber-500,
+.dark .bg-amber-400,
+.dark .bg-amber-500 *,
+.dark .bg-amber-400 * {
+  color: #09090b !important;
+}
+
+/* Soften light pastel badge/card backgrounds in Dark Mode (excluding Dukcapil KK & e-KTP) */
+.dark main .bg-amber-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-amber-50\/70:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-amber-50\/40:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-amber-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  border-color: rgba(245, 158, 11, 0.28) !important;
+}
+
+.dark main .bg-emerald-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-emerald-50\/60:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-emerald-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.28) !important;
+}
+
+.dark main .bg-sky-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-blue-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-indigo-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-sky-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  background-color: rgba(56, 189, 248, 0.12) !important;
+  border-color: rgba(56, 189, 248, 0.28) !important;
+}
+
+.dark main .bg-rose-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-rose-50\/70:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-rose-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .bg-rose-50\/70:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  background-color: rgba(244, 63, 94, 0.12) !important;
+  border-color: rgba(244, 63, 94, 0.28) !important;
+}
+
+.dark main .bg-orange-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .bg-purple-50:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  background-color: rgba(212, 175, 55, 0.1) !important;
+  border-color: rgba(212, 175, 55, 0.22) !important;
+}
+
+.dark main .text-amber-900:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .text-amber-800:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .text-amber-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-amber-900:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-amber-800:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  color: #fcd34d !important;
+}
+
+.dark main .text-emerald-900:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .text-emerald-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-emerald-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  color: #6ee7b7 !important;
+}
+
+.dark main .text-sky-900:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .text-sky-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark main .text-blue-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  color: #7dd3fc !important;
+}
+
+.dark main .text-rose-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-rose-800:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *),
+.dark .fixed .text-rose-700:not(#kk-dukcapil-sheet *):not(#ktp-dukcapil-card *) {
+  color: #fda4af !important;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-area, #printable-area * {
+    visibility: visible;
+  }
+  #printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
